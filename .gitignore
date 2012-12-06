@@ -1,0 +1,33 @@
+# For Mac
+.DS_Store
+
+# User Specific
+Procfile.dev
+config/ip_mapping.yml
+config/graphite.yml
+config/settings.yml
+config/fog.yml
+
+# Generated Files
+doc
+test
+log/*.log
+db/*.sqlite3
+coverage
+features/reports
+spec/reports
+tags
+exit/
+features/cassettes/*.yml
+app/assets/javascripts/i18n
+public/custom_logo*
+
+# Artifacts
+.bundle
+tmp/
+.idea
+dump.rdb
+.sass-cache
+public/assets/
+.swp
+nohup.out
