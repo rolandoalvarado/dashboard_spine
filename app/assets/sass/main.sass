@@ -1,0 +1,358 @@
+$main-color: #626c7c
+$blue: #1790d2
+$green: #81b822
+$yellow: #fbd035 
+$red: #e5172c
+$white: #fff
+
+html 
+	font-size: 100%
+	
+body 
+	font: 0.75em/1.5 "Lucida Grande","Helvetica Neue", sans-serif
+	color: lighten($main-color, 30%)
+
+input, select 
+	border-radius: 0 !important
+
+a
+	color: $main-color
+
+	&:hover
+		text-decoration: none
+		color: darken($main-color,50%)
+
+h3
+	font-size: 1.2em
+	line-height: 1.5
+	color: $main-color
+	font-weight: normal
+
+.left
+	float: left
+
+.right
+	float: right
+
+#header-wrap
+	background: url(../img/headerdrop.png) no-repeat center 0px 
+	border-bottom: 1px solid darken($white, 5%)
+	padding: 18px 0
+	
+	&.clicked
+		background: url(../img/headerdrop.png) no-repeat center 45px
+
+header#main		
+	.dropdown
+		float: right
+
+nav#main	
+	a
+		color: lighten($main-color, 30%)
+		margin-right: 10px
+
+.notice-wrap
+	padding: 9px 0 0
+	background-color: #1790d2
+	color: $white
+
+.notice-wrap.red
+	background-color: $red 
+	
+#main-content
+	margin-top: 25px
+	padding-bottom: 90px
+	
+	header
+		margin-bottom: 25px
+		color: $main-color
+		
+		#search-bar input
+			padding: 0
+			margin: 0
+			border: 0
+			box-shadow: none
+			width: 100px
+			font-size: 1em
+		
+		h2
+			font-weight: normal
+			font-size: 1.5em
+			margin-top: -5px
+			margin-bottom: 0
+			line-height: 1.5
+	
+	.status
+		color: lighten($main-color, 35%)
+		
+		span
+			margin-right: 10px
+
+#unified-notice
+	text-align: right
+	
+	a
+		background-color: lighten($blue, 20%)
+		color: $white
+		padding: 6px 10px
+		margin-top: -6px
+		
+#main-list	
+	.dropdown
+		float: right
+		.btn
+			padding: 0px 3px
+			
+	.list-wrap
+		dl
+			font-size: 0.6875em
+		dt
+			font-weight: normal
+			color: $main-color
+		dd
+			margin-left: 0
+			
+	.list-item
+		background-color: darken($white, 5%)
+		padding: 6px 5px
+		border-radius: 3px
+		height: 128px
+		position: relative
+		
+		h3
+			font-size: 1em
+			margin: 0
+			padding: 0
+		
+		&:hover
+			cursor: move
+			background-color: darken($white, 8%)
+			border: 3px solid $blue
+			height: 122px
+			box-shadow: inset 0 0 5px rgba(0,0,0,0.2)
+			
+		&.red,
+		&.yellow,
+		&.green,
+		&.blue,
+		&.idle
+			color: $white
+			
+			.init-status
+				position: relative
+				top: 45px
+				text-align: center
+				
+				& i
+					font-size: 36px
+					text-indent: -4px
+					
+			span
+				display: block
+				margin-top: 18px
+		&.idle
+			color: lighten($main-color, 30%)
+			
+		&.blue
+			color: $main-color
+		
+		&.idle
+			border: 2px dashed darken($white, 5%)
+			background-color: $white
+			height: 123px
+	
+		
+		&.red:hover,
+		&.yellow:hover,
+		&.green:hover,
+		&.idle:hover,
+		&.blue:hover
+			.init-status
+				display: none
+			
+		
+	.add
+		border: 2px dashed darken($white, 5%)
+		background-color: $white
+		text-align: center
+		font-size: 1.2em
+		
+		&:hover
+			background-color: darken($white, 2%)
+			border: 2px dashed darken($white, 5%)
+			height: 128px
+			box-shadow: none
+			cursor: pointer
+			 
+		
+		span
+			position: relative
+			top: 25%
+		
+	
+	.status
+		position: absolute
+		bottom: 0px
+		left: 12px
+		width: 10px
+		height: 10px
+		text-indent: -9999px
+		border-radius: 20px
+		
+	.green
+		background-color: $green
+	
+	.red
+		background-color: $red
+		
+	.yellow
+		background-color: $yellow
+	
+	.view i
+		color: $blue
+		position: absolute
+		font-size: 60px
+		padding: 0
+		text-align: center
+		top: 50%
+		margin-top: -15px
+		left: 50%
+		margin-left: -25px
+		border-radius: 100px
+		
+		&:hover
+			color: lighten($blue, 20%)
+	
+	.attachment
+		list-style: none
+		margin-left: -50px
+		margin-bottom: 0
+		
+		li a
+			background-color: $blue
+			color: $white
+			display: block
+			width: 45px
+			padding: 0 3px
+			margin: 3px
+			border-radius: 3px
+			
+			&:hover
+				background-color: lighten($blue,10%)
+
+
+#vm-tab
+	list-style: none
+	
+	a
+		color: lighten($main-color, 30%)
+	
+	.active
+		font-weight: bold
+		
+		a
+			color: $main-color
+
+#proj-create,
+#volume-list,
+#volume-list-attached,
+#new-volume,
+#attach-volume
+	position: fixed
+	left: 50%
+	top: 50%
+	margin-left: -440px
+	margin-top: -197px
+	width: 800px
+	padding: 32px 40px 18px
+	z-index: 2
+	background-color: $white
+	box-shadow: 0 0 5px rgba(0,0,0,0.2)
+	border-top: 1px solid darken($white, 5%)
+	
+	td,th
+		padding-left: 0
+		
+	th
+		font-weight: normal
+		color: $main-color
+	
+	input[id=proj-name]
+		width: 98%
+#info 
+	dl
+		margin: 0 0 3px 0
+		
+	dt
+		color: $main-color
+		font-weight: normal
+	dd
+		margin-left: 0
+
+.footer-wrap
+	background-color: $white
+	width: 100%
+	position: fixed
+	bottom: 0
+	z-index: 1
+	border-top: 1px solid darken($white, 5%)
+	color: $main-color
+	
+	.command
+		text-align: center
+		padding: 18px 5px 12px
+		margin-right: 0
+		cursor: pointer
+		
+		&:hover
+			background-color: lighten($main-color, 50%)
+		
+	i
+		font-size: 2em
+		margin-bottom: 9px
+	
+	p
+		font-size: 0.75em
+		margin-bottom: 0
+		
+.help-block 
+	color: #CCC
+
+
+label 
+	color: #626c7c
+	
+#info 
+	dl
+		border-bottom: 1px solid darken($white, 5%)
+		padding: 3px 5px
+	dt 
+		width: 120px
+		padding-right: 10px
+		
+	dd, dt
+		display: inline-block
+		
+.tab-content
+	h3
+		margin-top: 0
+		margin-bottom: 36px
+		padding-top: 0
+		padding-bottom: 3px
+		font-size: 12px
+		border-bottom: 1px solid darken($white, 20%)
+
+#diagram 
+	text-align: center
+	color: lighten($main-color, 30%)
+	
+	p
+		margin-bottom: 45px
+	
+	i
+		font-size: 34px
+		
+	span
+		display: block
+		margin: 9px 0
+			

@@ -29,6 +29,10 @@ gem 'eco'
 gem 'execjs'
 gem 'therubyracer'
 
+# For mustache templating
+gem 'smt_rails', git: 'git://github.com/railsware/smt_rails.git'
+gem 'kaminari'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -1,5 +1,9 @@
 DashboardSpine::Application.routes.draw do
-  resources :projects
+  #resources :projects
+  #root :to => 'projects#index'
+  
+  resources :projects, :only => [:index, :show]
+  root :to => 'projects#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
