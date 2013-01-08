@@ -16,4 +16,4 @@
 //= require mustache
 //= require_tree ../../templates
 
-//= require "projects"
+//= require app
