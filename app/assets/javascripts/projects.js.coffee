@@ -9,7 +9,7 @@ class ProjectsPager
     if @nearBottom()
       @page++
       $(window).unbind('scroll', @check)
-      $.getJSON($('#projects').data('json-url'), page: @page, @render)
+      $.getJSON($('#proj-dropdown').data('json-url'), page: @page, @render)
 
   nearBottom: =>
     $(window).scrollTop() > $(document).height() - $(window).height() - 100
@@ -17,8 +17,8 @@ class ProjectsPager
   render: (projects) =>
     for project in projects
       # mustache templates
-      $('#projects').append SMT['projects/project'](project)
+      $('#proj-dropdown').append SMT['projects/project_dropdown'](project)
     $(window).scroll(@check) if projects.length > 0
     
 $ ->
-  new ProjectsPager() if $('#projects').length
+  new ProjectsPager() if $('#proj-dropdown').length

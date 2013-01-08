@@ -1,83 +1,40 @@
 class ProjectsController < ApplicationController
-  # GET /projects
-  # GET /projects.json
+  respond_to :html, :json
+  
   def index
-    page = params[:page] || 1
-    @projects = Project.order(:created_at).page(page)
+    @projects = Project.all
+    respond_with @projects
+  end
 
-    respond_to do |format|
-      format.html
-      format.json do
-        render json: @projects.map { |p| view_context.project_for_template(p) }
-      end
-    end
+  def show
+    @project = Project.find(params[:id])
+    respond_with @project
+  end
+
+  def new
+    @project = Project.new
+    respond_with @project
   end
   
-  def show
+  def edit
     @project = Project.find(params[:id])
   end
 
-#  # GET /projects/new
-#  # GET /projects/new.json
-#  def new
-#    @project = Project.new
+  def create
+    @project = Project.new(params[:project])
+    @project.save
+    respond_with @project
+  end
 
-#    respond_to do |format|
-#      format.html # new.html.erb
-#      format.json { render json: @project }
-#    end
-#  end
+  def update
+    @project = Project.find(params[:id])
+    @project.update_attributes(params[:project])
+    respond_with @project
+  end
 
-#  # GET /projects/1/edit
-#  def edit
-#    @project = Project.find(params[:id])
-#  end
-
-#  # POST /projects
-#  # POST /projects.json
-#  def create
-#    @project = Project.new(params[:project])
-
-#    respond_to do |format|
-#      if @project.save
-#        format.html { redirect_to @project, notice: 'Project was successfully created.' }
-#        format.json { render json: @project, status: :created, location: @project }
-#      else
-#        format.html { render action: "new" }
-#        format.json { render json: @project.errors, status: :unprocessable_entity }
-#      end
-#    end
-#  end
-
-#  # PUT /projects/1
-#  # PUT /projects/1.json
-#  def update
-#    @project = Project.find(params[:id])
-
-#    respond_to do |format|
-#      if @project.update_attributes(params[:project])
-#        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
-#        format.json { head :no_content }
-#      else
-#        format.html { render action: "edit" }
-#        format.json { render json: @project.errors, status: :unprocessable_entity }
-#      end
-#    end
-#  end
-
-#  # DELETE /projects/1
-#  # DELETE /projects/1.json
-#  def destroy
-#    @project = Project.find(params[:id])
-#    @project.destroy
-
-#    respond_to do |format|
-#      format.html { redirect_to projects_url }
-#      format.json { head :no_content }
-#    end
-#  end
-#  
-#  def next
-#    
-#  end
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    head :ok
+  end
 end
