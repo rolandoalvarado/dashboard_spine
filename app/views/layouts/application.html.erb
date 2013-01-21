@@ -15,13 +15,14 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700' rel='stylesheet' type='text/css'>
  <%= javascript_include_tag "vendor/modernizr-2.6.2.min.js" %>
  <%= javascript_include_tag "application" %>
+ <%= csrf_meta_tags %>
 </head>
 <body>
 <!--[if lt IE 7]>
 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->    
-<!-- Display Content Here -->  
-<%= render "shared/page_loader" %>
+<!-- Display Content Here --> 
+<%#= render "shared/page_loader" %>
 <%= render "shared/main_nav" %>
 <%= yield %>
 <%= render "shared/footer" %>

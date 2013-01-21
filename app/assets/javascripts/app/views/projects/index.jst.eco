@@ -1,6 +1,143 @@
+<!-- Project Actions -->
+<!-- Header Wrapper -->
+<header class="clearfix" id="head-wrap">
+  <!-- Dropdown Left Wrapper -->
+  <div class="dropdown left">
+    <a class="dropdown-toggle" id="proj-name" role="button" data-toggle="dropdown" data-target="#" href="">
+      <i class="icon-cd main"></i> Project Name <i class="icon-arrow-down"></i>
+    </a>
+    <!-- Dropdown Menu UL -->
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+      <% for project in @projects: %>
+      <li><a href="">
+        <i class="icon-cd"></i>  <%= project.name %> <span>11 instances</span></a>
+      </li>
+      <% end %>
+    </ul>
+    <!-- /Dropdown Menu UL -->
+  </div>
+<!-- /Dropdown Left Wrapper -->
+<!-- Right Project Buttons -->
+  <div class="right proj-actions">
+    <!-- Button Group Left -->
+    <div class="btn-group left">
+	    <a class="btn" rel="tooltip" title="Volumes"><i class="icon-drive"></i></a> 
+	    <a class="btn" rel="tooltip" title="Floating IP"><i class="icon-network"></i></a> 
+	    <a class="btn" rel="tooltip" title="Security Group"><i class="icon-lock"></i></a>
+	    <a class="btn" rel="tooltip" title="Collaborators"><i class="icon-users"></i></a>
+    </div>
+    <!-- /Button Group Left -->
+    <!-- Button Dropdown Left -->
+    <div class="dropdown left">
+	    <a class="dropdown-toggle btn" id="actions" role="button" data-toggle="dropdown" data-target="#" href=""><i class="icon-cog"></i></a>
+	    <!-- Dropdown Menu Wrapper -->
+	    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+	      <li><a data-type="new"><i class="icon-plus"></i>  New Project</a></li>
+        <li><a data-type="edit">Edit</a></li>
+	      <li><a data-type="delete">Delete</a></li>
+	      <li class="divider"></li>
+	      <li><a data-type="quota">Quotas</a></li>
+	    </ul> <!-- /Dropdown Menu Wrapper -->
+	  </div> <!-- /Button Dropdown Left -->
+  </div> <!-- /Right Project Buttons -->  
+</header> <!-- /Header Wrapper -->  
+<!-- /Project Actions -->
 <!-- Main Wrapper -->
 <div id="main-wrap">
   <!-- Display Instances in Left Column -->
+  
+  <!-- Instances -->
+  <aside id="instances">
+    <header class="clearfix">
+      <h4 class="left">Instances</h4>
+      <a href="#create-instance" data-toggle="modal" class="right"><i class="icon-plus"></i></a>
+    </header>
+    <!-- Instance Item -->
+    <div class="instance-item clearfix active">
+      <div class="vm-img">
+        <img src="assets/loader-instance.gif" alt="loader-instance" width="55" height="31" class="instance-loader">
+      </div>
+      <dl>
+        <dt>Instance1-1</dt>
+        <dd>
+          <div class="attachments">
+            <i class="icon-drive"></i>
+            <i class="icon-network"></i>
+            <i class="icon-lock"></i>
+          </div>
+        </dd>
+      </dl>
+    </div>
+    <!-- /Instance Item -->
+    <!-- Instance Item -->
+    <div class="instance-item clearfix">
+      <div class="vm-img red"><i class="icon-cross"></i></div>
+      <dl>
+        <dt>InstanceName&hellip;</dt>
+        <dd>
+          <div class="attachments">
+            <i class="icon-drive"></i>
+            <i class="icon-network"></i>
+            <i class="icon-lock"></i>
+          </div>
+        </dd>
+      </dl>
+    </div>
+    <!-- /Instance Item -->
+    <div class="instance-item clearfix">
+      <div class="vm-img"><i class="icon-cube"></i></div>
+      <dl>
+        <dt>InstanceName&hellip;</dt>
+        <dd>
+          <div class="attachments">
+            <i class="icon-drive"></i>
+            <i class="icon-network"></i>
+            <i class="icon-lock"></i>
+          </div>
+        </dd>
+      </dl>
+    </div>
+    <!-- /Instance Item -->
+    <!-- Instance Item -->
+    <div class="instance-item clearfix">
+      <div class="vm-img red"><i class="icon-cross"></i></div>
+      <dl>
+        <dt>InstanceName&hellip;</dt>
+        <dd>
+          <div class="attachments">
+            <i class="icon-drive"></i>
+            <i class="icon-network"></i>
+            <i class="icon-lock"></i>
+          </div>
+        </dd>
+      </dl>
+    </div>
+    <!-- /Instance Item -->        
+    <!-- Instance Item -->
+    <div class="instance-item clearfix">
+      <div class="vm-img"><i class="icon-cube"></i></div>
+      <dl>
+        <dt>InstanceName&hellip;</dt>
+        <dd>
+          <div class="attachments">
+            <i class="icon-drive"></i>
+            <i class="icon-network"></i>
+            <i class="icon-lock"></i>
+          </div>
+        </dd>
+      </dl>
+    </div>
+    <!-- /Instance Item -->
+    <div class="instance-item clearfix">
+      <div class="vm-img"><i class=" icon-warning"></i></div>
+      <dl>
+        <dt>Instance5</dt>
+        <dd><small>No Attachments</small></dd>
+      </dl>
+    </div>
+  </aside>
+  <!-- /Instances -->
+  
   <!-- Right Content [Details] -->
   <div id="details">
     <!-- Tab Wrapper -->

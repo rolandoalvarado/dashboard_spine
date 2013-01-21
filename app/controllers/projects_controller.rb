@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  #before_filter :verified_request?  
+  
   respond_to :html, :json
   
   def index
@@ -21,6 +23,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    #logger.info("params[:project] : #{params[:project].inspect}")
     @project = Project.new(params[:project])
     @project.save
     respond_with @project

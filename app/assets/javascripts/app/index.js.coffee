@@ -17,7 +17,6 @@ class App extends Spine.Controller
     
     @append(@projects = new App.Projects)
     
-    App.Project.one 'refresh', ->
-      Spine.Route.setup()  
+    Spine.Route.setup()  
 
 window.App = App

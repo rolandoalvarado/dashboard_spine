@@ -8,6 +8,7 @@ $.fn.item = ->
 
 class New extends Spine.Controller
   events:
+    'click [data-type=back]': 'back'
     'submit form': 'submit'
     
   constructor: ->
@@ -16,7 +17,10 @@ class New extends Spine.Controller
     
   render: ->
     @html @view('projects/new')
-    
+
+  back: ->
+    @navigate '/projects'
+
   submit: (e) ->
     e.preventDefault()
     project = Project.fromForm(e.target).save()
@@ -24,6 +28,7 @@ class New extends Spine.Controller
 
 class Edit extends Spine.Controller
   events:
+    'click [data-type=back]': 'back'
     'submit form': 'submit'
   
   constructor: ->
@@ -32,12 +37,15 @@ class Edit extends Spine.Controller
       @change(params.id)
       
   change: (id) ->
-    @item = Page.find(id)
+    @item = Project.find(id)
     @render()
     
   render: ->
     @html @view('projects/edit')(@item)
-    
+
+  back: ->
+    @navigate '/projects'
+
   submit: (e) ->
     e.preventDefault()
     @item.fromForm(e.target).save()
@@ -45,8 +53,8 @@ class Edit extends Spine.Controller
 
 class Show extends Spine.Controller
   events:
-    'click [data-type=back]': 'back'
     'click [data-type=edit]': 'edit'
+    'click [data-type=back]': 'back'
 
   constructor: ->
     super
@@ -60,11 +68,11 @@ class Show extends Spine.Controller
   render: ->
     @html @view('projects/show')(@item)
 
-  back: ->
-    @navigate '/projects'
-    
   edit: ->
     @navigate '/projects', @item.id, 'edit'
+
+  back: ->
+    @navigate '/projects'
 
 class Index extends Spine.Controller
   events:
@@ -98,8 +106,6 @@ class Index extends Spine.Controller
     @navigate '/projects/new'
     
 class App.Projects extends Spine.Stack
-  className: 'projects stack'
-  
   controllers:
     index: Index
     edit:  Edit
@@ -111,6 +117,6 @@ class App.Projects extends Spine.Stack
     '/projects/:id/edit': 'edit'
     '/projects/:id':      'show'
     '/projects':          'index'
-    '':                'index'
     
+  default: 'index'
   className: 'stack projects'
